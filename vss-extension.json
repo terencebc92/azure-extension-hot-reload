@@ -1,0 +1,87 @@
+{
+    "manifestVersion": 1,
+    "version": "0.1.4",
+    "id": "hot-reload",
+    "name": "Terence Hot reload",
+    "publisher": "TerenceBuldaChia",
+    "demands": ["api-version/3.0"],
+    "publisherId": "TerenceBuldaChia",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "No desc",
+    "categories": [
+        "Azure Boards"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"
+    },
+    "contributions": [
+        {
+            "id": "metrics-hub-group",
+            "type": "ms.vss-web.hub-group",
+            "description": "Adds a metric hub group at the project/team-level.",
+            "targets": [
+                "ms.vss-web.project-hub-groups-collection"
+            ],
+            "properties": {
+                "name": "Metrics",
+                "order": 100,
+                "iconAsset": "TerenceBuldaChia.hot-reload/images/extension-icon.png",
+                "_sharedData": {
+                    "assets": [
+                        "TerenceBuldaChia.hot-reload/images/extension-icon.png"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "pipeline-metrics4",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                ".metrics-hub-group"
+            ],
+            "properties": {
+                "name": "First",
+                "order": 1,
+                "iconAsset": "TerenceBuldaChia.hot-reload/images/extension-icon.png",
+                "_sharedData": {
+                    "assets": [
+                        "TerenceBuldaChia.hot-reload/images/extension-icon.png"
+                    ]
+                },
+                "uri": "dist/index.html"
+            }
+        },
+        {
+            "id": "pipeline-metrics-5",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                ".metrics-hub-group"
+            ],
+            "properties": {
+                "name": "Second",
+                "order": 2,
+                "iconAsset": "TerenceBuldaChia.hot-reload/images/extension-icon.png",
+                "_sharedData": {
+                    "assets": [
+                        "TerenceBuldaChia.hot-reload/images/extension-icon.png"
+                    ]
+                },
+                "uri": "dist/index.html"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "dist",
+            "addressable": true
+        },
+        {
+            "path": "images",
+            "addressable": true
+        }
+    ]
+}
